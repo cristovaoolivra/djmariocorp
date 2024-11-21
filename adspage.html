@@ -30,6 +30,8 @@
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px; /* Espaçamento inferior */
+            width: 90%; /* Largura responsiva */
+            max-width: 400px; /* Largura máxima para telas grandes */
         }
 
         .button {
@@ -50,11 +52,26 @@
         .countdown {
             margin-top: 10px;
         }
+
+        /* Media Queries para responsividade */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Adiciona um pouco de padding em telas menores */
+            }
+
+            .container {
+                padding: 15px; /* Reduz o padding do container em telas menores */
+            }
+
+            .button {
+                padding: 8px 16px; /* Ajusta o tamanho do botão em telas menores */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <p class="countdown">Você será redirecionado para o Instagram @djmariosouza em <span id="countdown">15</span> segundos.</p>
+        <p class="countdown">Você será redirecionado para o Instagram @djmariosouza em: <span id="countdown">15</span> segundos.</p>
         <a href="https://instagram.com/djmariosouza" class="button">Saiba mais</a>
     </div>
 
