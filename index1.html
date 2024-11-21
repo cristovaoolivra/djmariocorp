@@ -3,105 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stories</title>
+    <title>Story Simulador | Instagram</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            background-color: #f0f0f0; /* Cor de fundo */
         }
 
         .story-container {
-            width: 300px;
-            height: 400px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            width: 300px; /* Largura do story */
+            height: 500px; /* Altura do story */
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJhbm5lciUyMGFkb3Z8ZW58MHx8fHwxNjg0NzY1NjY0&ixlib=rb-4.0.3&q=80&w=1080'); /* Imagem de fundo */
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px; /* Bordas arredondadas */
             position: relative;
+            overflow: hidden; /* Para esconder o conteúdo que ultrapassa as bordas */
         }
 
-        .story {
-            display: none;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .story.active {
-            display: block;
-        }
-
-        .navigation {
+        .story-content {
             position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        button {
-            background-color: #007bff;
+            bottom: 20px; /* Espaçamento do fundo */
+            left: 20px; /* Espaçamento da esquerda */
             color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            margin: 0 5px;
         }
 
-        button:hover {
+        .story-title {
+            font-size: 24px; /* Tamanho do título */
+            font-weight: bold;
+        }
+
+        .story-description {
+            font-size: 16px; /* Tamanho da descrição */
+            margin-top: 10px; /* Espaçamento acima da descrição */
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <div class="story-container">
-        <div class="story active" id="story1">
-            <h1>Story 1</h1>
-            <p>Esta é a primeira história.</p>
-        </div>
-        <div class="story" id="story2">
-            <h1>Story 2</h1>
-            <p>Esta é a segunda história.</p>
-        </div>
-        <div class="story" id="story3">
-            <h1>Story 3</h1>
-            <p>Esta é a terceira história.</p>
-        </div>
-        <div class="navigation">
-            <button onclick="prevStory()">Anterior</button>
-            <button onclick="nextStory()">Próximo</button>
+        <div class="story-content">
+            <div class="story-title">Título do Story</div>
+            <div class="story-description">Esta é uma descrição do story. Clique no botão abaixo para saber mais!</div>
+            <a href="https://instagram.com/djmariosouza" class="button">Saiba mais</a>
         </div>
     </div>
-
-    <script>
-        let currentStory = 0;
-        const stories = document.querySelectorAll('.story');
-
-        function showStory(index) {
-            stories.forEach((story, i) => {
-                story.classList.remove('active');
-                if (i === index) {
-                    story.classList.add('active');
-                }
-            });
-        }
-
-        function nextStory() {
-            currentStory = (currentStory + 1) % stories.length;
-            showStory(currentStory);
-        }
-
-        function prevStory() {
-            currentStory = (currentStory - 1 + stories.length) % stories.length;
-            showStory(currentStory);
-        }
-
-        // Inicializa a primeira história
-        showStory(currentStory);
-    </script>
 </body>
 </html>
