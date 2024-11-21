@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .story-container {
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .story {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .story.active {
+            display: block;
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="story-container">
+        <div class="story active" id="story1">
+            <h1>Story 1</h1>
+            <p>Esta é a primeira história.</p>
+        </div>
+        <div class="story" id="story2">
+            <h1>Story 2</h1>
+            <p>Esta é a segunda história.</p>
+        </div>
+        <div class="story" id="story3">
+            <h1>Story 3</h1>
+            <p>Esta é a terceira história.</p>
+        </div>
+        <div class="navigation">
+            <button onclick="prevStory()">Anterior</button>
+            <button onclick="nextStory()">Próximo</button>
+        </div>
+    </div>
+
+    <script>
+        let currentStory = 0;
+        const stories = document.querySelectorAll('.story');
+
+        function showStory(index) {
+            stories.forEach((story, i) => {
+                story.classList.remove('active');
+                if (i === index) {
+                    story.classList.add('active');
+                }
+            });
+        }
+
+        function nextStory() {
+            currentStory = (currentStory + 1) % stories.length;
+            showStory(currentStory);
+        }
+
+        function prevStory() {
+            currentStory = (currentStory - 1 + stories.length) % stories.length;
+            showStory(currentStory);
+        }
+
+        // Inicializa a primeira história
+        showStory(currentStory);
+    </script>
+</body>
+</html>
