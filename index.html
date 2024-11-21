@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mário Souza | Página inicial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            z-index: 1;
+            position: relative;
+            color: white; /* Cor do texto */
+        }
+
+        .botao {
+            background-color: #1A237E;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%; /* Ajusta o botão para ocupar a largura total */
+            max-width: 300px; /* Limita o tamanho máximo */
+            text-decoration: none; /* Remove o sublinhado */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .botao:hover {
+            background-color: #3949AB;
+        }
+
+        /* Regras de mídia para telas menores */
+        @media (max-width: 768px) {
+            .botao {
+                font-size: 14px; /* Reduz o tamanho da fonte */
+                padding: 12px 20px; /* Ajusta o espaçamento interno */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .botao {
+                font-size: 12px; /* Diminui ainda mais a fonte para telas menores */
+                padding: 10px 15px; /* Reduz o espaçamento interno */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="https://files.catbox.moe/tavc3q.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+    </div>
+    <div class="content">
+        <a href="https://wa.me/5584998939374?text=Olá,%20entrei%20em%20contato%20após%20visitar%20o%20seu%20site.%20Poderia%20me%20auxiliar%2C%20por%20favor%3F"
